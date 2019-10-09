@@ -1,5 +1,5 @@
-# Convolutional Neural Network
-# A comparison of different optimizers
+# Convolutional Neural Network (a study of the sklearn optimizers performance)
+A comparison of different optimizers
 ---------- 
 
  Branch from: https://github.com/zohrehraziei/CNN
