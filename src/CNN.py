@@ -89,12 +89,12 @@ print("Total Accuracy is %.2f%% (+/- %.2f%%)" % (np.mean(cvscores), np.std(cvsco
 print("F1 Score is %.2f%% (+/- %.2f%%)" % (np.mean(F1_score), np.std(F1_score)))
 
 #USING MULTI LEVEL PERCEPTRON
-from keras.optimizers import SGD
+from keras.optimizers import adam
 model = Sequential()
 model.add(Dense(256, activation='relu', input_dim=(32*32*3)))
 model.add(Dense(256, activation='relu'))
 model.add(Dense(10, activation='softmax'))
-sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+sgd = Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999, amsgrad=False)
 
 model.compile(optimizer=sgd,
               loss='categorical_crossentropy',
