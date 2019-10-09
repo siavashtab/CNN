@@ -142,7 +142,6 @@ model.add(Dense(256, activation='relu'))
 model.add(Dense(10, activation='softmax'))
 
 #### Loop over different optimizers
-opttcount = 0
 for algo in optzer:
     model.compile(optimizer=algo,
                   loss='categorical_crossentropy',
@@ -154,22 +153,27 @@ for algo in optzer:
     
     #MODEL SUMMARY AND PLOTS
     
-    def summarize_diagnostics(history):
-    	plt.subplot(211)
-    	plt.title('Cross Entropy Loss - Optimizer: ' + optzer_name[opttcount])
-    	plt.plot(history.history['loss'], color='blue', label='train')
-    	plt.plot(history.history['val_loss'], color='orange', label='test')
-    	plt.subplot(212)
-    	plt.title('Classification Accuracy - Optimizer: ' + optzer_name[opttcount])
-    	plt.plot(history.history['acc'], color='blue', label='train')
-    	plt.plot(history.history['val_acc'], color='orange', label='test')
-    opttcount += 1
+    def summarize_diagnostics(history, optimizer):
+        plt.subplot(211)
+        plt.title('Cross Entropy Loss - Optimizer: ' + optimizer)
+        plt.xlabel(' ')
+        plt.ylabel(' ')
+        plt.plot(history.history['loss'], color='blue', label='train')
+        plt.plot(history.history['val_loss'], color='orange', label='test')
+        plt.subplot(212)
+        plt.title('Classification Accuracy - Optimizer: ' + optimizer)
+        plt.xlabel(' ')
+        plt.ylabel(' ')
+        plt.plot(history.history['acc'], color='blue', label='train')
+        plt.plot(history.history['val_acc'], color='orange', label='test')
     i = 1
-    for h in History:
-      
-      summarize_diagnostics(h)
+    
+    opttcount = 0
+    for h in History:  
+      summarize_diagnostics(h, optzer_name[opttcount ])
       plt.show()
       print('For Fold: ',i)
       print('-------------------------------------------------------------')
       i+=1
+      opttcount += 1
 
