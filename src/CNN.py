@@ -37,10 +37,19 @@ X[0].shape
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import f1_score
 
-## Optimizer dictionary:
+## Optimizer colleciton:
 optzer = []
+from keras.optimizers import Adam
 optzer.append(Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999, amsgrad=False))
-optzer.append(keras.optimizers.SGD(learning_rate=0.01, momentum=0.0, nesterov=False))
+from keras.optimizers import SGD
+optzer.append(SGD(learning_rate=0.01, momentum=0.0, nesterov=False))
+from keras.optimizers import RMSprop
+## ref: http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf
+optzer.append(RMSprop(learning_rate=0.001, rho=0.9))
+from keras.optimizers import Adagrad
+## ref: http://www.jmlr.org/papers/volume12/duchi11a/duchi11a.pdf
+optzer.append(Adagrad(learning_rate=0.01))
+
 
 seed = 7
 np.random.seed(seed)
