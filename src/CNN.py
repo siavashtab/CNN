@@ -166,8 +166,8 @@ for algo in optzer:
         plt.ylabel(' ')
         plt.plot(history.history['acc'], color='blue', label='train')
         plt.plot(history.history['val_acc'], color='orange', label='test')
-    i = 1
     
+    i = 1
     opttcount = 0
     for h in History:  
       summarize_diagnostics(h, optzer_name[opttcount ])
