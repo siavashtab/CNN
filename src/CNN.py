@@ -37,6 +37,10 @@ X[0].shape
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import f1_score
 
+## Optimizer dictionary:
+optzer = []
+optzer.append(Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999, amsgrad=False))
+optzer.append(keras.optimizers.SGD(learning_rate=0.01, momentum=0.0, nesterov=False))
 
 seed = 7
 np.random.seed(seed)
