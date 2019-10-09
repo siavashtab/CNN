@@ -68,6 +68,16 @@ from keras.optimizers import Adamax
 ## ref: https://arxiv.org/pdf/1412.6980v8.pdf
 optzer.append(Adamax(learning_rate=0.002, beta_1=0.9, beta_2=0.999))
 #-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
+from keras.optimizers import Nadam
+## ref: http://cs229.stanford.edu/proj2015/054_report.pdf
+optzer.append(Nadam(learning_rate=0.002, beta_1=0.9, beta_2=0.999))
+#-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
+from keras.optimizers import Nadam
+## ref: http://cs229.stanford.edu/proj2015/054_report.pdf
+optzer.append(Nadam(learning_rate=0.002, beta_1=0.9, beta_2=0.999))
+#-------------------------------------------------------------------------------
 
 seed = 7
 np.random.seed(seed)
