@@ -1,4 +1,4 @@
-# Convolutional Neural Network (a study of the sklearn optimizers performance)
+# Convolutional Neural Network (a study of the sklearn stochastic optimizers performance)
 A comparison of different optimizers
 ---------- 
 
