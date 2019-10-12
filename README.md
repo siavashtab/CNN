@@ -1,5 +1,5 @@
 # A study of the sklearn stochastic optimizers performance
-A comparison of different optimizers
+Comparison of different optimizers
 ---------- 
 
  Branch from: https://github.com/zohrehraziei/CNN
